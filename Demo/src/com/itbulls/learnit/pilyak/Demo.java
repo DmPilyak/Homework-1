@@ -50,7 +50,7 @@ public class Demo {
 		System.out.print("Enter the radius circle: ");
 		double radius = sc.nextDouble();
 		double pi = 3.1415;
-		double circumference = 2*pi*radius;
+		double circumference = 2*Math.PI*radius;
 		System.out.println("Circumference is: " + circumference);
 	}
 	
