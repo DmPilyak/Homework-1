@@ -32,12 +32,14 @@ public class Demo {
 	public static void sum_of_integers() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter the first value: ");
-		double a = sc.nextDouble();
+		String s1 = sc.next();
+		int a = Integer.parseInt(s1);
 		System.out.print("Enter the second value: ");
-		double b = sc.nextDouble();
-		double sum = a + b;
-		int res = (int)sum;
-		System.out.println("Sum is: " + res);
+		String s2 = sc.next();
+		int b = Integer.parseInt(s2);
+		int sum = a + b;
+		
+		System.out.println("Sum is: " + sum);
 		System.out.println();
 		
 	}
@@ -48,7 +50,7 @@ public class Demo {
 		System.out.print("Enter the radius circle: ");
 		double radius = sc.nextDouble();
 		double pi = 3.1415;
-		double circumference = 2*pi*radius;
+		double circumference = 2*Math.PI*radius;
 		System.out.println("Circumference is: " + circumference);
 	}
 	
