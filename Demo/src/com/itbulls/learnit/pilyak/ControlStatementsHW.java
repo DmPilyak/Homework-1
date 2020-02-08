@@ -1,14 +1,15 @@
 package com.itbulls.learnit.pilyak;
 
 import java.util.Scanner;
+import java.util.Arrays;
 import  java.util.Random;
 
 public class ControlStatementsHW {
 	public static void main(String[] args) {
-		first();
-		sortWords();
-		pyramid();
-		arrays();
+		//first();
+		//sortWords();
+		//pyramid();
+		//arrays();
 		matrix();
 	}
 	
@@ -55,6 +56,10 @@ public class ControlStatementsHW {
 					tmp = arr[j];
 					arr[j] = arr[j + 1];
 					arr[j + 1] = tmp;
+					
+				}
+				else if(arr[j].length() == arr[j + 1].length()) {
+					arr[j].compareToIgnoreCase(arr[j + 1]);
 				}
 			}
 			
@@ -158,9 +163,10 @@ public class ControlStatementsHW {
 				sort90(orig_matrix, n);
 				break;
 			case 2:
-				sort90(orig_matrix, n);
+				sort180(orig_matrix, n);
 				break;
 			case 3:
+				sort270(orig_matrix, n);
 				System.out.println("Sorry, not today :(");
 				break;
 			case 4:
@@ -218,6 +224,27 @@ public class ControlStatementsHW {
 				System.out.println();
 			}
 			System.out.println();
+	}
+	
+	public static void sort270(double[][] orig_matrix, int n) {
+		double tmp;
+		for(int i = 0; i < n / 2; i++) {
+			for(int j = i; j < n - i - 1; j++) {
+					tmp = orig_matrix[i][j];
+					orig_matrix[i][j] = orig_matrix[i][n - i - 1];
+					orig_matrix[i][n - i - 1] = orig_matrix[n - j - 1][n - i - 1];
+					orig_matrix[n - j - 1][n - i - 1] = orig_matrix[n - j - 1][i];
+					orig_matrix[n - j - 1][i] = tmp;
+				}
+			}
+			for(int i = 0; i < n; i++) {
+				for(int j = 0; j < n; j++) {
+					System.out.print(orig_matrix[i][j] + " ");
+				}
+				System.out.println();
+			}
+			System.out.println();
+	
 	}
 	
 	
