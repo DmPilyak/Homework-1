@@ -1,1 +1,4 @@
-/bin/
+bin/
+doc/
+.project
+.classpath
