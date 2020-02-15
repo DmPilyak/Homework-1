@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Demo {
 	
-	public static void area_of_the_triangle() {
+	public static void areaOofTheTriangle() {
 		for(;;) {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter the first side of the triangle: ");
@@ -29,7 +29,7 @@ public class Demo {
 	}
 
 	
-	public static void sum_of_integers() {
+	public static void sumOfIntegers() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter the first value: ");
 		String s1 = sc.next();
@@ -75,10 +75,10 @@ public class Demo {
 			System.out.println();
 			switch(ch) {
 			case 1:
-				area_of_the_triangle();
+				areaOofTheTriangle();
 				break;
 			case 2:
-				sum_of_integers();
+				sumOfIntegers();
 				break;
 			case 3:
 				circumference();
