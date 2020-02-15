@@ -75,7 +75,7 @@ public class Demo {
 			System.out.println();
 			switch(ch) {
 			case 1:
-				areaOfTheTriangle();
+				areaOofTheTriangle();
 				break;
 			case 2:
 				sumOfIntegers();
