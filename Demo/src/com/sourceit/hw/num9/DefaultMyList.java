@@ -72,6 +72,7 @@ public class DefaultMyList<O> implements MyList {
 		return false;
 	}
 
+	
 	@Override
 	public boolean containsAll(MyList c) {
 		int k = 0;

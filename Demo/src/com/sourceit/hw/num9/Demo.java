@@ -24,6 +24,7 @@ public class Demo{
 		myList.add(new ArrayList<String>());
 		System.out.println(myList.size());
 		
+		
 		myList.clear();
 		System.out.println("--------");
 		DefaultMyList coll = new DefaultMyList ();

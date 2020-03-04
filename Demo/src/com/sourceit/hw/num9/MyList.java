@@ -8,5 +8,6 @@ public interface MyList<Object> extends Iterable<Object> {
 	int size(); 
 	boolean contains(Object o); 
 	boolean containsAll(MyList c); 
+	
 
 }
