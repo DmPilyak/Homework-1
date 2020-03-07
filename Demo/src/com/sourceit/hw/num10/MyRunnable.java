@@ -1,33 +1,47 @@
 package com.sourceit.hw.num10;
 
+import java.util.concurrent.TimeUnit;
 
 public class MyRunnable implements Runnable {
-	 private static final int TIME = 100;
+	 private static final int TIME = 10;
 	 private static int ITER = 200;
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) throws InterruptedException {
+		MyRunnable myRun1 = new MyRunnable();
+		Thread thread1 = new Thread(myRun1);
 		thread1.start();
 		
+		MyRunnable myRun2 = new MyRunnable();
+		Thread thread2 = new Thread(myRun2);
 		thread2.start();
+		///////////////////////////////////////////////////////////
+		Thread t3 = new Thread(() -> {
+			
+			try {
+			while(true) {
+					System.out.println(Thread.currentThread().getName());
+					Thread.sleep(10);
+				} 
+			
+			}catch (InterruptedException e) {
+				System.out.println("Stopped");
+			}
+		});
+		t3.start();
+		TimeUnit.SECONDS.sleep(5);     //stop main thread
+		t3.interrupt();
+		///////////////////////////////////////////////////////////////
 		
 	}
 	 
-	static MyRunnable myRun1 = new MyRunnable();
-	static Thread thread1 = new Thread(myRun1);
-	
-	static MyRunnable myRun2 = new MyRunnable();
-	static Thread thread2 = new Thread(myRun2);
-	
 	@Override
 	public void run() {
 		Counter c = new Counter();
 		try {
-			while(!Thread.currentThread().isInterrupted() && (ITER >= 0)) {
+			while(!Thread.currentThread().isInterrupted() && (ITER >= 0)) { //true
 				System.out.println(Thread.currentThread().getName() + ":  " + c.calculate());
 				c.counter1();
-			    //Thread.sleep(this.TIME);
-			    thread1.sleep(this.TIME*TIME);
+			    Thread.sleep(this.TIME);
 			    c.counter2();
 			    ITER--;
 			    //System.out.println(ITER);
