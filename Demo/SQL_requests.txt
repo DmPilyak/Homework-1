@@ -1,0 +1,27 @@
+#Запрос по изменению имен и фамилий в таблице по id
+UPDATE users SET first_name = 'Tomas', last_name = 'Shellby' WHERE id_user = 5;
+#для туров
+UPDATE tours SET name_tour = 'Rome' WHERE id_tour = 2;
+#================================================================================
+#Запрос по извлечению информации о клиенте по id
+SELECT * FROM users WHERE id_user = 1;
+#для туров
+SELECT * FROM tours WHERE id_tour = 1;
+#Извлечь пользователей по id и посмотреть, какие туры он заказал
+SELECT * FROM users
+JOIN users_tours ON users.id_user = users_tours.id_user
+JOIN tours ON tours.id_tour = users_tours.id_tour;
+#================================================================================
+#Запрос по добавлению клиента в таблицу
+INSERT INTO users (id_user, first_name, last_name) VALUES (8, 'Danny', 'Alexandrov');
+#для туров
+INSERT INTO tours (name_tour) VALUES ('Russia');
+#Добавить клиенту по id тур с указанным id 
+INSERT INTO users_tours (id_user, id_tour) VALUES (1, 3);
+#================================================================================
+#Запрос по удалению клиента из таблицы по id
+DELETE FROM users WHERE id_user = 3;
+#для туров
+DELETE FROM tours WHERE id_tour = 3;
+#Удаление тура по id, который заказал пользователь с указанным id
+DELETE FROM users_tours WHERE (id_user = 1 AND id_tour = 3);
